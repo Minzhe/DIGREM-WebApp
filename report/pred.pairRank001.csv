@@ -1,0 +1,92 @@
+"drugA","drugB","Score","Rank"
+"Aclacinomycin A","Blebbistatin",0.00048,81
+"Aclacinomycin A","Camptothecin",0.00056,79
+"Aclacinomycin A","Cycloheximide",0.00019,84
+"Aclacinomycin A","Doxorubicin hydrochloride",0.000775,75
+"Aclacinomycin A","Etoposide",0.00087,74
+"Aclacinomycin A","Geldanamycin",0.000135,86
+"Aclacinomycin A","H-7, Dihydrochloride",0.002525,67
+"Aclacinomycin A","Methotrexate",5.5e-05,88
+"Aclacinomycin A","Mitomycin C",0.001395,70
+"Aclacinomycin A","Monastrol",0.00061,77
+"Aclacinomycin A","Rapamycin",0.00369,65
+"Aclacinomycin A","Trichostatin A",0.001335,71
+"Aclacinomycin A","Vincristine",0.000145,85
+"Blebbistatin","Camptothecin",0.10911,40
+"Blebbistatin","Cycloheximide",0.015435,63
+"Blebbistatin","Doxorubicin hydrochloride",0.0542,53
+"Blebbistatin","Etoposide",0.10919,39
+"Blebbistatin","Geldanamycin",0.000325,82
+"Blebbistatin","H-7, Dihydrochloride",0.591545,8
+"Blebbistatin","Methotrexate",0.122865,38
+"Blebbistatin","Mitomycin C",0.161845,30
+"Blebbistatin","Monastrol",0.070235,48
+"Blebbistatin","Rapamycin",0.31222,21
+"Blebbistatin","Trichostatin A",0.07529,46
+"Blebbistatin","Vincristine",0.03719,58
+"Camptothecin","Cycloheximide",0.04072,57
+"Camptothecin","Doxorubicin hydrochloride",0.26488,23
+"Camptothecin","Etoposide",0.44347,13
+"Camptothecin","Geldanamycin",0.000295,83
+"Camptothecin","H-7, Dihydrochloride",0.46344,11
+"Camptothecin","Methotrexate",0.51865,9
+"Camptothecin","Mitomycin C",0.639875,7
+"Camptothecin","Monastrol",0.063185,49
+"Camptothecin","Rapamycin",0.198445,28
+"Camptothecin","Trichostatin A",0.12527,37
+"Camptothecin","Vincristine",0.043415,56
+"Cycloheximide","Doxorubicin hydrochloride",0.015755,62
+"Cycloheximide","Etoposide",0.03123,59
+"Cycloheximide","Geldanamycin",9e-05,87
+"Cycloheximide","H-7, Dihydrochloride",0.222015,26
+"Cycloheximide","Methotrexate",0.073045,47
+"Cycloheximide","Mitomycin C",0.09908,43
+"Cycloheximide","Monastrol",0.01171,64
+"Cycloheximide","Rapamycin",0.055535,52
+"Cycloheximide","Trichostatin A",0.001995,69
+"Cycloheximide","Vincristine",-0.00039,91
+"Doxorubicin hydrochloride","Etoposide",0.43501,15
+"Doxorubicin hydrochloride","Geldanamycin",0.000585,78
+"Doxorubicin hydrochloride","H-7, Dihydrochloride",0.34791,18
+"Doxorubicin hydrochloride","Methotrexate",0.24786,24
+"Doxorubicin hydrochloride","Mitomycin C",0.45046,12
+"Doxorubicin hydrochloride","Monastrol",0.079445,45
+"Doxorubicin hydrochloride","Rapamycin",0.246015,25
+"Doxorubicin hydrochloride","Trichostatin A",0.15574,32
+"Doxorubicin hydrochloride","Vincristine",0.025965,61
+"Etoposide","Geldanamycin",0.00062,76
+"Etoposide","H-7, Dihydrochloride",0.482455,10
+"Etoposide","Methotrexate",0.440245,14
+"Etoposide","Mitomycin C",0.698655,4
+"Etoposide","Monastrol",0.103565,42
+"Etoposide","Rapamycin",0.285325,22
+"Etoposide","Trichostatin A",0.20068,27
+"Etoposide","Vincristine",0.048785,54
+"Geldanamycin","H-7, Dihydrochloride",0.00223,68
+"Geldanamycin","Methotrexate",-3e-04,90
+"Geldanamycin","Mitomycin C",0.001085,73
+"Geldanamycin","Monastrol",0.000525,80
+"Geldanamycin","Rapamycin",0.003475,66
+"Geldanamycin","Trichostatin A",0.00113,72
+"Geldanamycin","Vincristine",5e-06,89
+"H-7, Dihydrochloride","Methotrexate",0.380535,17
+"H-7, Dihydrochloride","Mitomycin C",0.682645,6
+"H-7, Dihydrochloride","Monastrol",0.798695,2
+"H-7, Dihydrochloride","Rapamycin",2.53625,1
+"H-7, Dihydrochloride","Trichostatin A",0.688135,5
+"H-7, Dihydrochloride","Vincristine",0.414195,16
+"Methotrexate","Mitomycin C",0.705675,3
+"Methotrexate","Monastrol",0.153515,33
+"Methotrexate","Rapamycin",0.341005,19
+"Methotrexate","Trichostatin A",0.145345,34
+"Methotrexate","Vincristine",0.056535,51
+"Mitomycin C","Monastrol",0.10532,41
+"Mitomycin C","Rapamycin",0.318755,20
+"Mitomycin C","Trichostatin A",0.13084,36
+"Mitomycin C","Vincristine",0.093215,44
+"Monastrol","Rapamycin",0.144815,35
+"Monastrol","Trichostatin A",0.03046,60
+"Monastrol","Vincristine",0.04362,55
+"Rapamycin","Trichostatin A",0.156935,31
+"Rapamycin","Vincristine",0.191665,29
+"Trichostatin A","Vincristine",0.05669,50
