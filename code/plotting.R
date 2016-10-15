@@ -28,11 +28,15 @@ pair.ggheat <- function(pred.pair) {
 pair.ggbar <- function(pred.pair) {
       
       rankScore <- pred.pair[with(pred.pair, order(Rank)),]
-      if (nrow(rankScore) <= 10) {
+      
+      if (nrow(rankScore) <= 15) {
             num_plot <- nrow(rankScore)
-      } else {num_plot <- 10}
-      rankScore <- data.frame(DrugPair = mapply(function(x,y) paste(x, y, sep = " & "), rankScore$drugA, rankScore$drugB), 
-                              Score = rankScore$Score, stringsAsFactors = FALSE)[1:num_plot,]
+      } else {num_plot <- 15}
+      
+      rankScore <- data.frame(DrugPair = mapply(function(x,y) 
+            paste(x, y, sep = " & "), abbreviate(rankScore$drugA), abbreviate(rankScore$drugB)), 
+            Score = rankScore$Score, stringsAsFactors = FALSE)[1:num_plot,]
+      
       rankScore$DrugPair <- factor(rankScore$DrugPair, levels = rankScore$DrugPair)
       
       p <- ggplot(rankScore, aes(DrugPair, Score)) + geom_bar(stat = "identity", fill = "steelblue")
@@ -42,7 +46,7 @@ pair.ggbar <- function(pred.pair) {
                        axis.text.y = element_text(size = 12, colour = "black"), 
                        axis.title.x = element_text(size = 12, face = "bold"), 
                        axis.title.y = element_text(size = 12, face = "bold"), 
-                       plot.margin = unit(c(0.5,0.5,0.2,2), "cm"))
-
+                       plot.margin = unit(c(0.5,0.5,0.2,0.2), "cm"))
+      
       return(p + p.title + p.theme)
 }

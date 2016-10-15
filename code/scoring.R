@@ -11,7 +11,9 @@ library(KEGGgraph)
 ### Scoring drug pair synergistic score	
 scoring <- function(geneExpDiff, doseRes=doseRes, CGP.mat, GP.mat, fold=0.60) {
       
-
+      cat("Start scoring compound pairs by DIGRE model ...\n")
+      cat("------------\n")
+      
       ### Translate gene name to KEGG id
       KEGG.id <- gene2KEGGid(geneExpDiff$Gene)
       idx <- gsub("hsa:", "", KEGG.id, fixed = TRUE) != "NA"
@@ -86,6 +88,8 @@ scoring <- function(geneExpDiff, doseRes=doseRes, CGP.mat, GP.mat, fold=0.60) {
            sim.score.mat[i,-(1:2)] <- colMeans(sim.score.pair[,-(1:2)])
       }
       pair.rank <- data.frame(sim.score.mat[,c("drugA", "drugB", "Score")], Rank = rank(-sim.score.mat$Score))
+      
+      cat("Done scoring.\n\n")
       
       return(list(scoreRank = pair.rank, rawTable = sim.score.mat))
 
