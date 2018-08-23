@@ -4,11 +4,9 @@
 
 readDoseRes.csv <- function(file) {
       
-      cat("Reading drug dose response data ...\n")
-      cat("------------\n")
-      
+      cat("Reading drug dose response data ...\n-------------------------------\n")
       doseRes <- read.csv(file = file, row.names = 1, check.names = FALSE)
       
-      cat("Done parsing drug treated gene expression data.\n\n")
+      cat("Done parsing drug dose response data.\n\n")
       return(doseRes)
 }

@@ -2,13 +2,14 @@
 ### ====================================================== ###
 # This R function is to profile drug treated gene expression data
 
+library(preprocessCore)
 
+### --------------------------------- DIGRE ----------------------------------- ###
 
 profileGeneExp <- function(file) {
       
-      cat("Start parsing drug treated gene expression data ...\n")
-      cat("------------\n")
-      
+      cat("Start parsing drug treated gene expression data ...\n----------------------------------------------\n")
+
       ### Read data
       geneExp <- read.csv(file, header = FALSE, check.names = FALSE, stringsAsFactors = FALSE)
       
@@ -23,6 +24,8 @@ profileGeneExp <- function(file) {
       
       ### Convert probe level to gene level
       geneExp.profile <- prob2gene(geneExp.mat)
+      row.names(geneExp.profile) <- geneExp.profile$Gene
+      geneExp.profile$Gene <- NULL
       
       cat("Done parsing drug treated gene expression data.\n\n")
       return(geneExp.profile)
@@ -106,10 +109,28 @@ prob2gene <- function(geneExp) {
       geneName <- sapply(strsplit(geneExp$Gene, " ", fixed = TRUE), "[[", 1)
       geneExp$Gene <- geneName
       
-      geneExp.mean <- aggregate(geneExp[,-1], by = list(Gene = geneExp$Gene), FUN = mean)
+      # geneExp.mean <- aggregate(geneExp[,-1], by = list(Gene = geneExp$Gene), FUN = mean)
       geneExp.max <- aggregate(geneExp[,-1], by = list(Gene = geneExp$Gene), FUN = max)
-      geneExp.min <- aggregate(geneExp[,-1], by = list(Gene = geneExp$Gene), FUN = min)
+      # geneExp.min <- aggregate(geneExp[,-1], by = list(Gene = geneExp$Gene), FUN = min)
       
-      geneExp.profile <- list(geneExp.mean = geneExp.mean, geneExp.max = geneExp.max, geneExp.min = geneExp.min)
-      return(geneExp.profile$geneExp.max)
+      # geneExp.profile <- list(geneExp.mean = geneExp.mean, geneExp.max = geneExp.max, geneExp.min = geneExp.min)
+      return(geneExp.max)
+}
+
+
+### --------------------------------- Other methods ----------------------------------- ###
+
+readGeneExp <- function(file) {
+      
+      ### Read data
+      geneExp <- read.csv(file, header = TRUE, check.names = FALSE, stringsAsFactors = FALSE)
+      col.names <- colnames(geneExp)[-1]
+      
+      ### sort columns
+      geneExp.mat <- geneExp[,-1][,order(col.names)]
+      colnames(geneExp.mat) <- col.names[order(col.names)]
+      geneExp.mat <- cbind(Genename = geneExp[,1], geneExp.mat, stringsAsFactors = FALSE)
+      
+      return(geneExp.mat)
+      
 }

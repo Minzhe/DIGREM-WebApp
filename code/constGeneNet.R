@@ -7,22 +7,15 @@ library(KEGGgraph)
 
 constGeneNet <- function(file) {
       cat("Parsing gene network data ...\n")
-      cat("------------\n")
+      cat("-----------------------------\n")
       
       # read gene network file
       geneNet <- read.csv(file, header = TRUE, stringsAsFactors = FALSE)
       
       # convert gene SYMBOL name to KEGG id
-      source.gene <- sapply(mget(geneNet[,1], org.Hs.egSYMBOL2EG, ifnotfound = NA), "[[", 1)
-      target.gene <- sapply(mget(geneNet[,2], org.Hs.egSYMBOL2EG, ifnotfound = NA), "[[", 1)
+      source.gene <- geneNet[,1]
+      target.gene <- geneNet[,2]
       geneNet.id <- data.frame(source = source.gene, target = target.gene, stringsAsFactors = FALSE)
-      
-      # delete NA
-      geneNet.id <- geneNet.id[(!(grepl("NA", source.gene))) & (!(grepl("NA", target.gene))),]
-      
-      # paste "hsa"
-      geneNet.id$source <- paste("hsa:", geneNet.id$source, sep = "")
-      geneNet.id$target <- paste("hsa:", geneNet.id$target, sep = "")
       
       # construct gene network matrix
       gene.list <- union(geneNet.id$source, geneNet.id$target)
